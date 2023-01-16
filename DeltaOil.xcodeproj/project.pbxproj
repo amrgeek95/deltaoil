@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04BB9E9D297569DC003B92BB /* DeltaOilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9E9C297569DC003B92BB /* DeltaOilApp.swift */; };
+		04BB9E9F297569DC003B92BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9E9E297569DC003B92BB /* ContentView.swift */; };
+		04BB9EA1297569DD003B92BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9EA0297569DD003B92BB /* Assets.xcassets */; };
+		04BB9EA4297569DD003B92BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9EA3297569DD003B92BB /* Preview Assets.xcassets */; };
+		04BB9EA6297569DD003B92BB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EA5297569DD003B92BB /* Persistence.swift */; };
+		04BB9EA9297569DD003B92BB /* DeltaOil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EA7297569DD003B92BB /* DeltaOil.xcdatamodeld */; };
+		04BB9EB3297569DD003B92BB /* DeltaOilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EB2297569DD003B92BB /* DeltaOilTests.swift */; };
+		04BB9EBD297569DD003B92BB /* DeltaOilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EBC297569DD003B92BB /* DeltaOilUITests.swift */; };
+		04BB9EBF297569DD003B92BB /* DeltaOilUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EBE297569DD003B92BB /* DeltaOilUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04BB9EAF297569DD003B92BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04BB9E91297569DC003B92BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04BB9E98297569DC003B92BB;
+			remoteInfo = DeltaOil;
+		};
+		04BB9EB9297569DD003B92BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04BB9E91297569DC003B92BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04BB9E98297569DC003B92BB;
+			remoteInfo = DeltaOil;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04BB9E99297569DC003B92BB /* DeltaOil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeltaOil.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BB9E9C297569DC003B92BB /* DeltaOilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeltaOilApp.swift; sourceTree = "<group>"; };
+		04BB9E9E297569DC003B92BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04BB9EA0297569DD003B92BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04BB9EA3297569DD003B92BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04BB9EA5297569DD003B92BB /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		04BB9EA8297569DD003B92BB /* DeltaOil.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DeltaOil.xcdatamodel; sourceTree = "<group>"; };
+		04BB9EAE297569DD003B92BB /* DeltaOilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeltaOilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BB9EB2297569DD003B92BB /* DeltaOilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeltaOilTests.swift; sourceTree = "<group>"; };
+		04BB9EB8297569DD003B92BB /* DeltaOilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeltaOilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04BB9EBC297569DD003B92BB /* DeltaOilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeltaOilUITests.swift; sourceTree = "<group>"; };
+		04BB9EBE297569DD003B92BB /* DeltaOilUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeltaOilUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04BB9E96297569DC003B92BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB9EAB297569DD003B92BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB9EB5297569DD003B92BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04BB9E90297569DC003B92BB = {
+			isa = PBXGroup;
+			children = (
+				04BB9E9B297569DC003B92BB /* DeltaOil */,
+				04BB9EB1297569DD003B92BB /* DeltaOilTests */,
+				04BB9EBB297569DD003B92BB /* DeltaOilUITests */,
+				04BB9E9A297569DC003B92BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04BB9E9A297569DC003B92BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04BB9E99297569DC003B92BB /* DeltaOil.app */,
+				04BB9EAE297569DD003B92BB /* DeltaOilTests.xctest */,
+				04BB9EB8297569DD003B92BB /* DeltaOilUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04BB9E9B297569DC003B92BB /* DeltaOil */ = {
+			isa = PBXGroup;
+			children = (
+				04BB9E9C297569DC003B92BB /* DeltaOilApp.swift */,
+				04BB9E9E297569DC003B92BB /* ContentView.swift */,
+				04BB9EA0297569DD003B92BB /* Assets.xcassets */,
+				04BB9EA5297569DD003B92BB /* Persistence.swift */,
+				04BB9EA7297569DD003B92BB /* DeltaOil.xcdatamodeld */,
+				04BB9EA2297569DD003B92BB /* Preview Content */,
+			);
+			path = DeltaOil;
+			sourceTree = "<group>";
+		};
+		04BB9EA2297569DD003B92BB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				04BB9EA3297569DD003B92BB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		04BB9EB1297569DD003B92BB /* DeltaOilTests */ = {
+			isa = PBXGroup;
+			children = (
+				04BB9EB2297569DD003B92BB /* DeltaOilTests.swift */,
+			);
+			path = DeltaOilTests;
+			sourceTree = "<group>";
+		};
+		04BB9EBB297569DD003B92BB /* DeltaOilUITests */ = {
+			isa = PBXGroup;
+			children = (
+				04BB9EBC297569DD003B92BB /* DeltaOilUITests.swift */,
+				04BB9EBE297569DD003B92BB /* DeltaOilUITestsLaunchTests.swift */,
+			);
+			path = DeltaOilUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04BB9E98297569DC003B92BB /* DeltaOil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04BB9EC2297569DD003B92BB /* Build configuration list for PBXNativeTarget "DeltaOil" */;
+			buildPhases = (
+				04BB9E95297569DC003B92BB /* Sources */,
+				04BB9E96297569DC003B92BB /* Frameworks */,
+				04BB9E97297569DC003B92BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeltaOil;
+			productName = DeltaOil;
+			productReference = 04BB9E99297569DC003B92BB /* DeltaOil.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04BB9EAD297569DD003B92BB /* DeltaOilTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04BB9EC5297569DD003B92BB /* Build configuration list for PBXNativeTarget "DeltaOilTests" */;
+			buildPhases = (
+				04BB9EAA297569DD003B92BB /* Sources */,
+				04BB9EAB297569DD003B92BB /* Frameworks */,
+				04BB9EAC297569DD003B92BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04BB9EB0297569DD003B92BB /* PBXTargetDependency */,
+			);
+			name = DeltaOilTests;
+			productName = DeltaOilTests;
+			productReference = 04BB9EAE297569DD003B92BB /* DeltaOilTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04BB9EB7297569DD003B92BB /* DeltaOilUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04BB9EC8297569DD003B92BB /* Build configuration list for PBXNativeTarget "DeltaOilUITests" */;
+			buildPhases = (
+				04BB9EB4297569DD003B92BB /* Sources */,
+				04BB9EB5297569DD003B92BB /* Frameworks */,
+				04BB9EB6297569DD003B92BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04BB9EBA297569DD003B92BB /* PBXTargetDependency */,
+			);
+			name = DeltaOilUITests;
+			productName = DeltaOilUITests;
+			productReference = 04BB9EB8297569DD003B92BB /* DeltaOilUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04BB9E91297569DC003B92BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					04BB9E98297569DC003B92BB = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					04BB9EAD297569DD003B92BB = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 04BB9E98297569DC003B92BB;
+					};
+					04BB9EB7297569DD003B92BB = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 04BB9E98297569DC003B92BB;
+					};
+				};
+			};
+			buildConfigurationList = 04BB9E94297569DC003B92BB /* Build configuration list for PBXProject "DeltaOil" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 04BB9E90297569DC003B92BB;
+			productRefGroup = 04BB9E9A297569DC003B92BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04BB9E98297569DC003B92BB /* DeltaOil */,
+				04BB9EAD297569DD003B92BB /* DeltaOilTests */,
+				04BB9EB7297569DD003B92BB /* DeltaOilUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04BB9E97297569DC003B92BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BB9EA4297569DD003B92BB /* Preview Assets.xcassets in Resources */,
+				04BB9EA1297569DD003B92BB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB9EAC297569DD003B92BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB9EB6297569DD003B92BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04BB9E95297569DC003B92BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BB9EA6297569DD003B92BB /* Persistence.swift in Sources */,
+				04BB9E9F297569DC003B92BB /* ContentView.swift in Sources */,
+				04BB9E9D297569DC003B92BB /* DeltaOilApp.swift in Sources */,
+				04BB9EA9297569DD003B92BB /* DeltaOil.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB9EAA297569DD003B92BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BB9EB3297569DD003B92BB /* DeltaOilTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04BB9EB4297569DD003B92BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04BB9EBF297569DD003B92BB /* DeltaOilUITestsLaunchTests.swift in Sources */,
+				04BB9EBD297569DD003B92BB /* DeltaOilUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04BB9EB0297569DD003B92BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04BB9E98297569DC003B92BB /* DeltaOil */;
+			targetProxy = 04BB9EAF297569DD003B92BB /* PBXContainerItemProxy */;
+		};
+		04BB9EBA297569DD003B92BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04BB9E98297569DC003B92BB /* DeltaOil */;
+			targetProxy = 04BB9EB9297569DD003B92BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		04BB9EC0297569DD003B92BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		04BB9EC1297569DD003B92BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04BB9EC3297569DD003B92BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DeltaOil/Preview Content\"";
+				DEVELOPMENT_TEAM = LCD84ACBQF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = codegrow.DeltaOil;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04BB9EC4297569DD003B92BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DeltaOil/Preview Content\"";
+				DEVELOPMENT_TEAM = LCD84ACBQF;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = codegrow.DeltaOil;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		04BB9EC6297569DD003B92BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LCD84ACBQF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = codegrow.DeltaOilTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeltaOil.app/DeltaOil";
+			};
+			name = Debug;
+		};
+		04BB9EC7297569DD003B92BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LCD84ACBQF;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = codegrow.DeltaOilTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeltaOil.app/DeltaOil";
+			};
+			name = Release;
+		};
+		04BB9EC9297569DD003B92BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LCD84ACBQF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = codegrow.DeltaOilUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DeltaOil;
+			};
+			name = Debug;
+		};
+		04BB9ECA297569DD003B92BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LCD84ACBQF;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = codegrow.DeltaOilUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DeltaOil;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04BB9E94297569DC003B92BB /* Build configuration list for PBXProject "DeltaOil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BB9EC0297569DD003B92BB /* Debug */,
+				04BB9EC1297569DD003B92BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04BB9EC2297569DD003B92BB /* Build configuration list for PBXNativeTarget "DeltaOil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BB9EC3297569DD003B92BB /* Debug */,
+				04BB9EC4297569DD003B92BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04BB9EC5297569DD003B92BB /* Build configuration list for PBXNativeTarget "DeltaOilTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BB9EC6297569DD003B92BB /* Debug */,
+				04BB9EC7297569DD003B92BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04BB9EC8297569DD003B92BB /* Build configuration list for PBXNativeTarget "DeltaOilUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04BB9EC9297569DD003B92BB /* Debug */,
+				04BB9ECA297569DD003B92BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		04BB9EA7297569DD003B92BB /* DeltaOil.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04BB9EA8297569DD003B92BB /* DeltaOil.xcdatamodel */,
+			);
+			currentVersion = 04BB9EA8297569DD003B92BB /* DeltaOil.xcdatamodel */;
+			path = DeltaOil.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 04BB9E91297569DC003B92BB /* Project object */;
+}
