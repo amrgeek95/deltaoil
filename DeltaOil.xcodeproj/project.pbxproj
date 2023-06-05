@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040DFF662986758D001BE07B /* newRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DFF652986758D001BE07B /* newRequestViewModel.swift */; };
+		040DFF6829867599001BE07B /* newRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DFF6729867599001BE07B /* newRequestView.swift */; };
+		040DFF6A298675A5001BE07B /* newRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DFF69298675A5001BE07B /* newRequestModel.swift */; };
+		040DFF6C29867A93001BE07B /* customInputViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DFF6B29867A93001BE07B /* customInputViews.swift */; };
+		040DFF6E29878EB6001BE07B /* validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DFF6D29878EB6001BE07B /* validation.swift */; };
+		040DFF7029884324001BE07B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DFF6F29884324001BE07B /* DataController.swift */; };
+		040DFF732989062C001BE07B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DFF722989062C001BE07B /* SignUpView.swift */; };
+		040DFF7529890F59001BE07B /* AppModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DFF7429890F59001BE07B /* AppModels.swift */; };
+		040DFF7729890FB0001BE07B /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DFF7629890FB0001BE07B /* Constant.swift */; };
+		040DFF7A2989AA47001BE07B /* signupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040DFF792989AA47001BE07B /* signupViewModel.swift */; };
+		040EEFFD2985492500C2FD30 /* packageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EEFFC2985492500C2FD30 /* packageViewModel.swift */; };
+		040EEFFF2985494A00C2FD30 /* packageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EEFFE2985494A00C2FD30 /* packageModel.swift */; };
+		040EF00229854B9D00C2FD30 /* fetchingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EF00129854B9D00C2FD30 /* fetchingImage.swift */; };
+		048977002976A9BA005E0189 /* newOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048976FF2976A9BA005E0189 /* newOrderView.swift */; };
+		04B050C429814EF20078263E /* contactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B050C329814EF20078263E /* contactUsView.swift */; };
+		04B050C62982A6CE0078263E /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B050C52982A6CE0078263E /* Utilites.swift */; };
 		04BB9E9D297569DC003B92BB /* DeltaOilApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9E9C297569DC003B92BB /* DeltaOilApp.swift */; };
 		04BB9E9F297569DC003B92BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9E9E297569DC003B92BB /* ContentView.swift */; };
 		04BB9EA1297569DD003B92BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9EA0297569DD003B92BB /* Assets.xcassets */; };
@@ -16,6 +32,31 @@
 		04BB9EB3297569DD003B92BB /* DeltaOilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EB2297569DD003B92BB /* DeltaOilTests.swift */; };
 		04BB9EBD297569DD003B92BB /* DeltaOilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EBC297569DD003B92BB /* DeltaOilUITests.swift */; };
 		04BB9EBF297569DD003B92BB /* DeltaOilUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EBE297569DD003B92BB /* DeltaOilUITestsLaunchTests.swift */; };
+		04BB9ECC29756E7F003B92BB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9ECB29756E7F003B92BB /* SplashScreen.swift */; };
+		04BB9ED6297571DA003B92BB /* Tajawal-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9ECF297571DA003B92BB /* Tajawal-ExtraBold.ttf */; };
+		04BB9ED7297571DA003B92BB /* Tajawal-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9ED0297571DA003B92BB /* Tajawal-Black.ttf */; };
+		04BB9ED8297571DA003B92BB /* Tajawal-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9ED1297571DA003B92BB /* Tajawal-ExtraLight.ttf */; };
+		04BB9ED9297571DA003B92BB /* Tajawal-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9ED2297571DA003B92BB /* Tajawal-Bold.ttf */; };
+		04BB9EDA297571DA003B92BB /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9ED3297571DA003B92BB /* Tajawal-Light.ttf */; };
+		04BB9EDB297571DA003B92BB /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9ED4297571DA003B92BB /* Tajawal-Medium.ttf */; };
+		04BB9EDC297571DA003B92BB /* Tajawal-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04BB9ED5297571DA003B92BB /* Tajawal-Regular.ttf */; };
+		04BB9EE0297579BC003B92BB /* homeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EDF297579BC003B92BB /* homeView.swift */; };
+		04BB9EE229757A2E003B92BB /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EE129757A2E003B92BB /* tabView.swift */; };
+		04BB9EE429757A6B003B92BB /* RequestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BB9EE329757A6B003B92BB /* RequestsView.swift */; };
+		04D364432998EB9A00DF1016 /* orderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D364422998EB9A00DF1016 /* orderModel.swift */; };
+		04D364452998EC7900DF1016 /* orderItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D364442998EC7900DF1016 /* orderItemView.swift */; };
+		04D364472998F45400DF1016 /* seperatorCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D364462998F45400DF1016 /* seperatorCustomView.swift */; };
+		04D3644929993F1800DF1016 /* orderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3644829993F1800DF1016 /* orderView.swift */; };
+		04D3644D29994C6A00DF1016 /* orderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D3644C29994C6A00DF1016 /* orderDetailView.swift */; };
+		04E3F5B0298BFB7300EC78F8 /* inputGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3F5AF298BFB7300EC78F8 /* inputGenerator.swift */; };
+		04E3F5B3298C41FB00EC78F8 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3F5B2298C41FB00EC78F8 /* SignUpModel.swift */; };
+		04E3F5B5298C7BBF00EC78F8 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E3F5B4298C7BBF00EC78F8 /* UserData.swift */; };
+		04E4E4F9297C437800119C20 /* customNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4E4F8297C437800119C20 /* customNavBar.swift */; };
+		04E4E4FC297DCAF000119C20 /* packageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E4E4FB297DCAF000119C20 /* packageView.swift */; };
+		04EF16FE29925123005514B6 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EF16FD29925123005514B6 /* Service.swift */; };
+		04FCFBAA297E97730091399D /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCFBA9297E97730091399D /* loginView.swift */; };
+		04FCFBAE297EE8250091399D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCFBAD297EE8250091399D /* Validation.swift */; };
+		04FCFBB1297EE8400091399D /* loginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCFBB0297EE8400091399D /* loginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +77,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040DFF652986758D001BE07B /* newRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newRequestViewModel.swift; sourceTree = "<group>"; };
+		040DFF6729867599001BE07B /* newRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newRequestView.swift; sourceTree = "<group>"; };
+		040DFF69298675A5001BE07B /* newRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newRequestModel.swift; sourceTree = "<group>"; };
+		040DFF6B29867A93001BE07B /* customInputViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customInputViews.swift; sourceTree = "<group>"; };
+		040DFF6D29878EB6001BE07B /* validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = validation.swift; sourceTree = "<group>"; };
+		040DFF6F29884324001BE07B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		040DFF722989062C001BE07B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		040DFF7429890F59001BE07B /* AppModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModels.swift; sourceTree = "<group>"; };
+		040DFF7629890FB0001BE07B /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		040DFF792989AA47001BE07B /* signupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signupViewModel.swift; sourceTree = "<group>"; };
+		040EEFFC2985492500C2FD30 /* packageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packageViewModel.swift; sourceTree = "<group>"; };
+		040EEFFE2985494A00C2FD30 /* packageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packageModel.swift; sourceTree = "<group>"; };
+		040EF00129854B9D00C2FD30 /* fetchingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchingImage.swift; sourceTree = "<group>"; };
+		048976FF2976A9BA005E0189 /* newOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newOrderView.swift; sourceTree = "<group>"; };
+		04B050C329814EF20078263E /* contactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactUsView.swift; sourceTree = "<group>"; };
+		04B050C52982A6CE0078263E /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		04BB9E99297569DC003B92BB /* DeltaOil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeltaOil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BB9E9C297569DC003B92BB /* DeltaOilApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeltaOilApp.swift; sourceTree = "<group>"; };
 		04BB9E9E297569DC003B92BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +105,32 @@
 		04BB9EB8297569DD003B92BB /* DeltaOilUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeltaOilUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BB9EBC297569DD003B92BB /* DeltaOilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeltaOilUITests.swift; sourceTree = "<group>"; };
 		04BB9EBE297569DD003B92BB /* DeltaOilUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeltaOilUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		04BB9ECB29756E7F003B92BB /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		04BB9ECF297571DA003B92BB /* Tajawal-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-ExtraBold.ttf"; sourceTree = "<group>"; };
+		04BB9ED0297571DA003B92BB /* Tajawal-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Black.ttf"; sourceTree = "<group>"; };
+		04BB9ED1297571DA003B92BB /* Tajawal-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-ExtraLight.ttf"; sourceTree = "<group>"; };
+		04BB9ED2297571DA003B92BB /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Bold.ttf"; sourceTree = "<group>"; };
+		04BB9ED3297571DA003B92BB /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Light.ttf"; sourceTree = "<group>"; };
+		04BB9ED4297571DA003B92BB /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Medium.ttf"; sourceTree = "<group>"; };
+		04BB9ED5297571DA003B92BB /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Regular.ttf"; sourceTree = "<group>"; };
+		04BB9EDD29757256003B92BB /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		04BB9EDF297579BC003B92BB /* homeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeView.swift; sourceTree = "<group>"; };
+		04BB9EE129757A2E003B92BB /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
+		04BB9EE329757A6B003B92BB /* RequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsView.swift; sourceTree = "<group>"; };
+		04D364422998EB9A00DF1016 /* orderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderModel.swift; sourceTree = "<group>"; };
+		04D364442998EC7900DF1016 /* orderItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderItemView.swift; sourceTree = "<group>"; };
+		04D364462998F45400DF1016 /* seperatorCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seperatorCustomView.swift; sourceTree = "<group>"; };
+		04D3644829993F1800DF1016 /* orderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderView.swift; sourceTree = "<group>"; };
+		04D3644C29994C6A00DF1016 /* orderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderDetailView.swift; sourceTree = "<group>"; };
+		04E3F5AF298BFB7300EC78F8 /* inputGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputGenerator.swift; sourceTree = "<group>"; };
+		04E3F5B2298C41FB00EC78F8 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		04E3F5B4298C7BBF00EC78F8 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		04E4E4F8297C437800119C20 /* customNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customNavBar.swift; sourceTree = "<group>"; };
+		04E4E4FB297DCAF000119C20 /* packageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packageView.swift; sourceTree = "<group>"; };
+		04EF16FD29925123005514B6 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		04FCFBA9297E97730091399D /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
+		04FCFBAD297EE8250091399D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		04FCFBB0297EE8400091399D /* loginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +158,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040DFF642986757A001BE07B /* newRequest */ = {
+			isa = PBXGroup;
+			children = (
+				040DFF652986758D001BE07B /* newRequestViewModel.swift */,
+				040DFF6729867599001BE07B /* newRequestView.swift */,
+				040DFF69298675A5001BE07B /* newRequestModel.swift */,
+			);
+			path = newRequest;
+			sourceTree = "<group>";
+		};
+		040DFF712989061D001BE07B /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				040DFF722989062C001BE07B /* SignUpView.swift */,
+				040DFF792989AA47001BE07B /* signupViewModel.swift */,
+				04E3F5B2298C41FB00EC78F8 /* SignUpModel.swift */,
+				04E3F5B4298C7BBF00EC78F8 /* UserData.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		040EF00029854B8600C2FD30 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				04B050C52982A6CE0078263E /* Utilites.swift */,
+				040EF00129854B9D00C2FD30 /* fetchingImage.swift */,
+				040DFF6D29878EB6001BE07B /* validation.swift */,
+				040DFF7629890FB0001BE07B /* Constant.swift */,
+				04E3F5AF298BFB7300EC78F8 /* inputGenerator.swift */,
+				04D364462998F45400DF1016 /* seperatorCustomView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		04B050C129814ED60078263E /* preLoginViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = preLoginViews;
+			sourceTree = "<group>";
+		};
+		04B050C229814EDF0078263E /* staticScreen */ = {
+			isa = PBXGroup;
+			children = (
+				04B050C329814EF20078263E /* contactUsView.swift */,
+			);
+			path = staticScreen;
+			sourceTree = "<group>";
+		};
 		04BB9E90297569DC003B92BB = {
 			isa = PBXGroup;
 			children = (
@@ -98,12 +230,29 @@
 		04BB9E9B297569DC003B92BB /* DeltaOil */ = {
 			isa = PBXGroup;
 			children = (
+				04D364412998EB8A00DF1016 /* orders */,
+				04EF16FC299250F0005514B6 /* Service */,
+				040DFF712989061D001BE07B /* Signup */,
+				040DFF642986757A001BE07B /* newRequest */,
+				040EF00029854B8600C2FD30 /* Helpers */,
+				04FCFBAF297EE8330091399D /* ViewModel */,
+				04FCFBAC297EE8160091399D /* Models */,
+				04FCFBA8297E97660091399D /* Views */,
+				04E4E4FA297DCAE400119C20 /* Packages */,
+				04E4E4F7297C436C00119C20 /* Customs */,
+				04BB9ECD297571C6003B92BB /* Assets */,
 				04BB9E9C297569DC003B92BB /* DeltaOilApp.swift */,
 				04BB9E9E297569DC003B92BB /* ContentView.swift */,
+				04BB9ECB29756E7F003B92BB /* SplashScreen.swift */,
 				04BB9EA0297569DD003B92BB /* Assets.xcassets */,
 				04BB9EA5297569DD003B92BB /* Persistence.swift */,
 				04BB9EA7297569DD003B92BB /* DeltaOil.xcdatamodeld */,
 				04BB9EA2297569DD003B92BB /* Preview Content */,
+				04BB9EDD29757256003B92BB /* info.plist */,
+				04BB9EDF297579BC003B92BB /* homeView.swift */,
+				04BB9EE129757A2E003B92BB /* tabView.swift */,
+				04BB9EE329757A6B003B92BB /* RequestsView.swift */,
+				048976FF2976A9BA005E0189 /* newOrderView.swift */,
 			);
 			path = DeltaOil;
 			sourceTree = "<group>";
@@ -131,6 +280,110 @@
 				04BB9EBE297569DD003B92BB /* DeltaOilUITestsLaunchTests.swift */,
 			);
 			path = DeltaOilUITests;
+			sourceTree = "<group>";
+		};
+		04BB9ECD297571C6003B92BB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				04BB9ECE297571CB003B92BB /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		04BB9ECE297571CB003B92BB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				04BB9ED0297571DA003B92BB /* Tajawal-Black.ttf */,
+				04BB9ED2297571DA003B92BB /* Tajawal-Bold.ttf */,
+				04BB9ECF297571DA003B92BB /* Tajawal-ExtraBold.ttf */,
+				04BB9ED1297571DA003B92BB /* Tajawal-ExtraLight.ttf */,
+				04BB9ED3297571DA003B92BB /* Tajawal-Light.ttf */,
+				04BB9ED4297571DA003B92BB /* Tajawal-Medium.ttf */,
+				04BB9ED5297571DA003B92BB /* Tajawal-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		04D364412998EB8A00DF1016 /* orders */ = {
+			isa = PBXGroup;
+			children = (
+				04D3644B29994C3C00DF1016 /* orderDetail */,
+				04D3644A29994C2800DF1016 /* orderList */,
+			);
+			path = orders;
+			sourceTree = "<group>";
+		};
+		04D3644A29994C2800DF1016 /* orderList */ = {
+			isa = PBXGroup;
+			children = (
+				04D364422998EB9A00DF1016 /* orderModel.swift */,
+				04D364442998EC7900DF1016 /* orderItemView.swift */,
+				04D3644829993F1800DF1016 /* orderView.swift */,
+			);
+			path = orderList;
+			sourceTree = "<group>";
+		};
+		04D3644B29994C3C00DF1016 /* orderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				04D3644C29994C6A00DF1016 /* orderDetailView.swift */,
+			);
+			path = orderDetail;
+			sourceTree = "<group>";
+		};
+		04E4E4F7297C436C00119C20 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				040DFF6B29867A93001BE07B /* customInputViews.swift */,
+				04E4E4F8297C437800119C20 /* customNavBar.swift */,
+			);
+			path = Customs;
+			sourceTree = "<group>";
+		};
+		04E4E4FA297DCAE400119C20 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				04E4E4FB297DCAF000119C20 /* packageView.swift */,
+				040EEFFC2985492500C2FD30 /* packageViewModel.swift */,
+				040EEFFE2985494A00C2FD30 /* packageModel.swift */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		04EF16FC299250F0005514B6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				04EF16FD29925123005514B6 /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		04FCFBA8297E97660091399D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04B050C229814EDF0078263E /* staticScreen */,
+				04B050C129814ED60078263E /* preLoginViews */,
+				04FCFBA9297E97730091399D /* loginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		04FCFBAC297EE8160091399D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				04FCFBAD297EE8250091399D /* Validation.swift */,
+				040DFF6F29884324001BE07B /* DataController.swift */,
+				040DFF7429890F59001BE07B /* AppModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04FCFBAF297EE8330091399D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04FCFBB0297EE8400091399D /* loginViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,8 +490,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04BB9EDB297571DA003B92BB /* Tajawal-Medium.ttf in Resources */,
+				04BB9EDA297571DA003B92BB /* Tajawal-Light.ttf in Resources */,
 				04BB9EA4297569DD003B92BB /* Preview Assets.xcassets in Resources */,
+				04BB9ED6297571DA003B92BB /* Tajawal-ExtraBold.ttf in Resources */,
 				04BB9EA1297569DD003B92BB /* Assets.xcassets in Resources */,
+				04BB9ED8297571DA003B92BB /* Tajawal-ExtraLight.ttf in Resources */,
+				04BB9EDC297571DA003B92BB /* Tajawal-Regular.ttf in Resources */,
+				04BB9ED9297571DA003B92BB /* Tajawal-Bold.ttf in Resources */,
+				04BB9ED7297571DA003B92BB /* Tajawal-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,10 +523,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040DFF6A298675A5001BE07B /* newRequestModel.swift in Sources */,
+				04BB9EE429757A6B003B92BB /* RequestsView.swift in Sources */,
+				04E3F5B5298C7BBF00EC78F8 /* UserData.swift in Sources */,
+				04BB9ECC29756E7F003B92BB /* SplashScreen.swift in Sources */,
+				04D3644D29994C6A00DF1016 /* orderDetailView.swift in Sources */,
+				04D364432998EB9A00DF1016 /* orderModel.swift in Sources */,
+				04D3644929993F1800DF1016 /* orderView.swift in Sources */,
+				04FCFBB1297EE8400091399D /* loginViewModel.swift in Sources */,
+				04E3F5B0298BFB7300EC78F8 /* inputGenerator.swift in Sources */,
+				04D364472998F45400DF1016 /* seperatorCustomView.swift in Sources */,
+				040DFF7529890F59001BE07B /* AppModels.swift in Sources */,
 				04BB9EA6297569DD003B92BB /* Persistence.swift in Sources */,
+				04EF16FE29925123005514B6 /* Service.swift in Sources */,
+				048977002976A9BA005E0189 /* newOrderView.swift in Sources */,
+				040DFF7729890FB0001BE07B /* Constant.swift in Sources */,
+				04FCFBAE297EE8250091399D /* Validation.swift in Sources */,
+				040EEFFF2985494A00C2FD30 /* packageModel.swift in Sources */,
+				040DFF7A2989AA47001BE07B /* signupViewModel.swift in Sources */,
+				040DFF732989062C001BE07B /* SignUpView.swift in Sources */,
+				04B050C429814EF20078263E /* contactUsView.swift in Sources */,
+				04D364452998EC7900DF1016 /* orderItemView.swift in Sources */,
+				04E4E4F9297C437800119C20 /* customNavBar.swift in Sources */,
+				040DFF7029884324001BE07B /* DataController.swift in Sources */,
+				04E3F5B3298C41FB00EC78F8 /* SignUpModel.swift in Sources */,
+				040DFF6829867599001BE07B /* newRequestView.swift in Sources */,
 				04BB9E9F297569DC003B92BB /* ContentView.swift in Sources */,
+				040EF00229854B9D00C2FD30 /* fetchingImage.swift in Sources */,
 				04BB9E9D297569DC003B92BB /* DeltaOilApp.swift in Sources */,
+				040DFF6E29878EB6001BE07B /* validation.swift in Sources */,
 				04BB9EA9297569DD003B92BB /* DeltaOil.xcdatamodeld in Sources */,
+				040DFF6C29867A93001BE07B /* customInputViews.swift in Sources */,
+				040EEFFD2985492500C2FD30 /* packageViewModel.swift in Sources */,
+				04BB9EE229757A2E003B92BB /* tabView.swift in Sources */,
+				040DFF662986758D001BE07B /* newRequestViewModel.swift in Sources */,
+				04B050C62982A6CE0078263E /* Utilites.swift in Sources */,
+				04BB9EE0297579BC003B92BB /* homeView.swift in Sources */,
+				04FCFBAA297E97730091399D /* loginView.swift in Sources */,
+				04E4E4FC297DCAF000119C20 /* packageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"DeltaOil/Preview Content\"";
 				DEVELOPMENT_TEAM = LCD84ACBQF;
 				ENABLE_PREVIEWS = YES;
@@ -433,6 +727,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -442,7 +737,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -452,7 +747,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"DeltaOil/Preview Content\"";
 				DEVELOPMENT_TEAM = LCD84ACBQF;
 				ENABLE_PREVIEWS = YES;
@@ -462,6 +757,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,7 +767,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

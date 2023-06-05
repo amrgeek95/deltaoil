@@ -11,10 +11,15 @@ import SwiftUI
 struct DeltaOilApp: App {
     let persistenceController = PersistenceController.shared
 
+   @State private var dataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            SplashScreen()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(userSetting())
+                .environmentObject(packageEnviromentObject())
+                .environmentObject(orderDetailEnviroment())
         }
     }
 }
