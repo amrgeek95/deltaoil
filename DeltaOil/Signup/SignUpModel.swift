@@ -24,7 +24,6 @@ struct UserModel :Codable{
     let longitude :String
     let latitude :String
     let image :String
-    let birthdate :String
     let status :String
     let token :String
     let cityname :String
