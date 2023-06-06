@@ -20,6 +20,7 @@
 		040EEFFD2985492500C2FD30 /* packageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EEFFC2985492500C2FD30 /* packageViewModel.swift */; };
 		040EEFFF2985494A00C2FD30 /* packageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EEFFE2985494A00C2FD30 /* packageModel.swift */; };
 		040EF00229854B9D00C2FD30 /* fetchingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040EF00129854B9D00C2FD30 /* fetchingImage.swift */; };
+		043408852A2ED3D1000F1A91 /* sliderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043408842A2ED3D1000F1A91 /* sliderModel.swift */; };
 		048977002976A9BA005E0189 /* newOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048976FF2976A9BA005E0189 /* newOrderView.swift */; };
 		04B050C429814EF20078263E /* contactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B050C329814EF20078263E /* contactUsView.swift */; };
 		04B050C62982A6CE0078263E /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B050C52982A6CE0078263E /* Utilites.swift */; };
@@ -90,6 +91,7 @@
 		040EEFFC2985492500C2FD30 /* packageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packageViewModel.swift; sourceTree = "<group>"; };
 		040EEFFE2985494A00C2FD30 /* packageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packageModel.swift; sourceTree = "<group>"; };
 		040EF00129854B9D00C2FD30 /* fetchingImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fetchingImage.swift; sourceTree = "<group>"; };
+		043408842A2ED3D1000F1A91 /* sliderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sliderModel.swift; sourceTree = "<group>"; };
 		048976FF2976A9BA005E0189 /* newOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newOrderView.swift; sourceTree = "<group>"; };
 		04B050C329814EF20078263E /* contactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactUsView.swift; sourceTree = "<group>"; };
 		04B050C52982A6CE0078263E /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				04FCFBAD297EE8250091399D /* Validation.swift */,
 				040DFF6F29884324001BE07B /* DataController.swift */,
 				040DFF7429890F59001BE07B /* AppModels.swift */,
+				043408842A2ED3D1000F1A91 /* sliderModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				04BB9E9F297569DC003B92BB /* ContentView.swift in Sources */,
 				040EF00229854B9D00C2FD30 /* fetchingImage.swift in Sources */,
 				04BB9E9D297569DC003B92BB /* DeltaOilApp.swift in Sources */,
+				043408852A2ED3D1000F1A91 /* sliderModel.swift in Sources */,
 				040DFF6E29878EB6001BE07B /* validation.swift in Sources */,
 				04BB9EA9297569DD003B92BB /* DeltaOil.xcdatamodeld in Sources */,
 				040DFF6C29867A93001BE07B /* customInputViews.swift in Sources */,
