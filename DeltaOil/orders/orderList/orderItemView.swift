@@ -19,28 +19,29 @@ struct orderItemView: View {
             VStack(alignment: .leading){
                 HStack{
                     Image(systemName: "person")
-                        .font(.title)
-                        .foregroundColor(appColors.greenColor)
-                    Text(orderDetailM.name ?? "")
-                        .font(.title2)
+                        .font(.body)
+                        .foregroundColor(appColors.darkGreenColor)
+                    Text("رقم الطلب : \(orderDetailM.id)")
+                        .font(.body)
+                        .foregroundColor(appColors.darkGreenColor)
                         
                     Spacer()
-                    Text(orderDetailM.statusMessage)
-                        .padding(10)
-                        .background(.white)
-                        .cornerRadius(10)
-                        .font(.title3)
-                        .foregroundColor(appColors.greenColor)
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(appColors.greenColor)
-                        }
+//                    Text(orderDetailM.statusMessage)
+//                        .padding(10)
+//                        .background(.white)
+//                        .cornerRadius(10)
+//                        .font(.title3)
+//                        .foregroundColor(appColors.greenColor)
+//                        .overlay {
+//                            RoundedRectangle(cornerRadius: 10)
+//                                .stroke(appColors.greenColor)
+//                        }
                     
                 }
                 seperatorCustomView(type: "horizontal")
                     .padding(.horizontal,20)
                 HStack(alignment: .center){
-                    orderItemBottmView(title:"كمية الزيت", subTitle: orderDetailM.oilAmount)
+                    orderItemBottmView(title:"الكمية ", subTitle: "\(orderDetailM.oilAmount) كجم")
                     Spacer()
                     seperatorCustomView(type: "vertical")
                     Spacer()
@@ -51,7 +52,7 @@ struct orderItemView: View {
             .padding()
 
         }
-        .frame(maxWidth: .infinity,maxHeight: 170)
+        .frame(maxWidth: .infinity,maxHeight: 130)
         .padding()
     }
 }
@@ -63,6 +64,7 @@ struct orderItemBottmView: View {
     var body: some View {
         VStack(alignment: .leading){
             Text(title)
+                .foregroundColor(.gray)
             Text(subTitle)
         }
         .frame(maxWidth: .infinity,alignment: .leading)

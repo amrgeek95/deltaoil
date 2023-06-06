@@ -7,62 +7,64 @@
 
 import SwiftUI
 
+import Combine
+class homeViewModel :ObservableObject {
+    
+    @Published var sliders  = [sliderModel]()
+    func getSlider () {
+        guard let url = URL(string:EndPoint.sliderUrl) else {
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) {[weak self]  data , _ , error in
+            guard let data = data , error == nil else {
+                return
+            }
+            guard let self = self else{return}
+            
+            do {
+                let getresponse = try JSONDecoder().decode(sliderResponseModel.self, from: data)
+                DispatchQueue.main.async {
+                    self.sliders = getresponse.data
+                    print(self.sliders)
+                    
+                }
+            }
+            catch (let error){
+                print(error.localizedDescription)
+            }
+        }
+        task.resume()
+    }
+}
 struct homeView: View {
     @EnvironmentObject var userObject:userSetting
+    @StateObject var homeVM = homeViewModel()
+
     @State private var showSignUp = false
     @State private var showNewOrder = false
     var body: some View {
         NavigationView{
-            VStack(spacing:0.0) {
-                ZStack {
-                    
-                    customNavBar(title: "الرئيسية", backBtnHidden: true, subBtnHidden: false)
-                    VStack {
-                        if userObject.userInfo != nil {
-                            homeSliderView(title: " جاهز تبدل الزيت ؟ يا  \(userObject.userInfo?.name ?? "") ")
-                        }else{
-                            homeSliderView(title: "")
+            ScrollView{
+                customNavBar(title: "الرئيسية", backBtnHidden: true, subBtnHidden: false)
 
-                        }
-                        VStack(spacing:30) {
-                                Button{
-                                    showNewOrder.toggle()
-                                } label: {
-                                    homeItemView(title: "طلب جديد", mainIcon: "NewOrderHomepage", leftIcon: "newOrderLight", itemColor: "lightPurbleBox")
-                                }.fullScreenCover(isPresented: $showNewOrder) {
-                                    newRequestView() 
-                                }
-                                Button{
-                                    if userObject.userInfo != nil {
-                                        showSignUp.toggle()
-                                    }else{
-                                            SignUpView()
-                                    }
-                                } label: {
-                                    if userObject.userInfo != nil {
-                                        homeItemView(title: "نقاطي", mainIcon: "UserHomePage", leftIcon: "profileLight", itemColor: "lightGreenBox")
-                                    }else{
-                                        homeItemView(title: "تسجيل حساب جديد", mainIcon: "UserHomePage", leftIcon: "profileLight", itemColor: "lightGreenBox")
+                VStack(spacing:0.0) {
+                    if !homeVM.sliders.isEmpty {
+                        fetchUrlImage(imageUrl: homeVM.sliders.first?.image ?? "")
+                            .frame(idealHeight: 200.0,maxHeight: 200)
 
-                                    }
-                                }.fullScreenCover(isPresented: $showSignUp) {
-                                    SignUpView()
-                                }
-                            }
                     }
+                    newRequestView()
 
-                    
-                    
-
-                    
+                    Spacer()
                 }
-                
-                
-             //   Spacer()
+                Spacer()
             }
             .navigationBarHidden(true)
             .edgesIgnoringSafeArea(.all)
 
+        }
+        .onAppear{
+            homeVM.getSlider()
         }
         
     }

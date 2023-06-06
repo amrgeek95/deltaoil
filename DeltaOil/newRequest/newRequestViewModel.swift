@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 
 class newRequestViewModel:ObservableObject {
-    @Published var newRequestObject = newRequestModel(oil_amount: "3", packages: [], notes: "")
+    @Published var newRequestObject = newRequestModel(oil_amount: "", packages: [], notes: "")
     @Published var errorMessages = requestErrorMessages(oilAmountError: "", notesError: "", packageError: "")
     @Published var oilError = ""
     @Published var maxOilCount = 0
@@ -20,7 +20,6 @@ class newRequestViewModel:ObservableObject {
     @Published var alertErrorMessage = ""
     @Published var packageobject :packageEnviromentObject!
     var userSession :userSetting!
-
     func setup(package:packageEnviromentObject, session: userSetting) {
         self.packageobject = package
          self.userSession = session

@@ -24,6 +24,7 @@ enum Symbols {
 }
 enum appColors {
     static let greenColor = Color("greenColor")
+    static let darkGreenColor = Color("greenColor")
     static let textBGGrayColor = Color("textBackgroundGrayColor")
     static let tabGrayColor = Color("tabGrayColor")
     static let tabGreenColor = Color("tabGreenColor")

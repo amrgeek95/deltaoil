@@ -6,3 +6,9 @@
 //
 
 import Foundation
+struct sliderResponseModel :Codable {
+    let data:[sliderModel]
+}
+struct sliderModel : Codable {
+    let image : String
+}

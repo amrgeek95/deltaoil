@@ -27,6 +27,8 @@ class packageViewModel : ObservableObject {
     @Published var packageItem:[packageModel] = []
     @Published var packageItemone:packageModel = packageModel.init(id: "1", name: "Amora", description: "Ahmed hassan youssef",image: "",size:
     "0")
+    @Published var textOnSubmitAction = "عرض الهدايا المتاحة"
+
     var cancellable = Set<AnyCancellable>()
     
     init () {
@@ -70,11 +72,13 @@ class packageViewModel : ObservableObject {
         }.resume()
     }
     
-    func getPackages (){
+    func getPackages (size:String = "0"){
 
-        guard let url = URL(string:"https://imextrading-co.com/deltaoil/global/packages") else {
+        guard let url = URL(string:"https://imextrading-co.com/deltaoil/global/packages?size=\(size)") else {
             return
         }
+        print(url)
+        
          URLSession.shared.dataTaskPublisher(for: url)
 
             .map(\.data)
@@ -88,9 +92,10 @@ class packageViewModel : ObservableObject {
                     print("error")
                     break;
                 }
-            }, receiveValue: { data in
+            }, receiveValue: { [weak self] data in
                 DispatchQueue.main.async {
-                    self.packageItem = data.data
+                    self?.packageItem = data.data
+                    self?.textOnSubmitAction = "تأكيد"
                 }
             })
             .store(in: &cancellable)
@@ -98,7 +103,6 @@ class packageViewModel : ObservableObject {
     }
     
     func getPackagess () {
-        print("hello amr")
         guard let url = URL(string:"https://imextrading-co.com/deltaoil/global/packages") else {
             return
         }

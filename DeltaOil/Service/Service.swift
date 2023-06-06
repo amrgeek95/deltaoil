@@ -34,6 +34,8 @@ enum httpMethod :String {
 enum EndPoint {
     static let baseUrl = "https://imextrading-co.com/deltaoil/"
     static let signupUrl = "\(EndPoint.baseUrl)global/signup"
+    static let sliderUrl = "\(EndPoint.baseUrl)global/get_sliders"
+    static let get_packages = "\(EndPoint.baseUrl)global/get_packages"
 }
 extension EndPoint {
     static let cityUrl = "\(EndPoint.baseUrl)global/cities"

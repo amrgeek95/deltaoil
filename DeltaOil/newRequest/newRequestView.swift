@@ -31,12 +31,9 @@ struct newRequestView: View {
     
     var body: some View {
         ScrollView{
-            customNavBar(title: " طلب جديد")
             ZStack {
                 VStack(alignment:.leading) {
                     oilamountText
-                    
-                   
                     errorMessageLabel(labelTitle: newRequestVM.errorMessages.oilAmountError)
                     Rectangle()
                         .fill(Color.secondary)
@@ -56,7 +53,13 @@ struct newRequestView: View {
                     
                     notesText
                     Button(action: {
-                        newRequestVM.submitAction()
+                        if packageVM.packageItem.isEmpty {
+                            packageVM.getPackages(size: newRequestVM.newRequestObject.oil_amount)
+                        }else{
+                            newRequestVM.submitAction()
+                        }
+
+                       // newRequestVM.submitAction()
                     }, label: {
                         if newRequestVM.loadingChecker {
                             HStack{
@@ -71,7 +74,7 @@ struct newRequestView: View {
                             .opacity(0.7)
 
                         }else{
-                            Text("تأكيد")
+                            Text(packageVM.textOnSubmitAction)
                                 .fontWeight(.bold)
                                 .padding()
                                 .frame(maxWidth: .infinity)
@@ -102,7 +105,7 @@ struct newRequestView: View {
         })
         .onAppear{
             newRequestVM.setup(package:packageEnviroment,session: userObject)
-            packageVM.getPackages()
+//            packageVM.getPackages()
         }
         
         .navigationBarHidden(true)
@@ -123,22 +126,39 @@ extension newRequestView {
     var oilamountText : some View {
         VStack(alignment: .leading) {
             labelDefaultView(labelTitle: "الكمية المتوقعة للزيت")
-            TextField(text: $newRequestVM.newRequestObject.oil_amount ,
-                      label: {
-                Text("كمية الزيت")
-                //   Text("dasdas")
-            })
-            .textContentType(.telephoneNumber)
-            .keyboardType(.asciiCapableNumberPad)
-            .onChange(of: newRequestVM.newRequestObject.oil_amount){ newvalue in
-                newRequestVM.validateOilInput(newvalue: newvalue)
+            HStack{
+                TextField(text: $newRequestVM.newRequestObject.oil_amount ,
+                          label: {
+                    Text("الكمية المتوقعة ( حد ادني ٢ كجم) ")
+                    //   Text("dasdas")
+                })
+                .textContentType(.telephoneNumber)
+                .keyboardType(.asciiCapableNumberPad)
+                .onChange(of: newRequestVM.newRequestObject.oil_amount){ newvalue in
+                    guard let oilamount = Int(newvalue) else {
+                        return
+                    }
+                    newRequestVM.validateOilInput(newvalue: newvalue)
+                    packageVM.packageItem.removeAll()
+                    if oilamount < 3 {
+                        newRequestVM.errorMessages.oilAmountError = "لا يمكن اختيار اقل من ٢ كيلو زيت"
+                        return
+                    }
+                
+
+
+                }
+                Text("| كجم")
+                    .foregroundColor(.gray)
             }
+            
             .padding()
             .background(Color("textBackgroundGrayColor"))
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color("greenColor"), lineWidth: 0.5)
-            )
+            .cornerRadius(10)
+//            .overlay(
+//                RoundedRectangle(cornerRadius: 10)
+//                    .stroke(.white, lineWidth: 1.5)
+//            )
             
             .multilineTextAlignment(.leading)
         }
@@ -146,23 +166,28 @@ extension newRequestView {
 }
 extension newRequestView {
     var notesText : some View {
+        
         VStack(alignment: .leading) {
-            labelDefaultView(labelTitle: "ملاحظات اضافيه  ")
-            TextField(text: $newRequestVM.newRequestObject.notes ,
-                      label: {
-                Text("يمكنك كتابة ملاحظات اضافيه .... ")
-                //   Text("dasdas")
-            })
-            .textContentType(.addressState)
-            .keyboardType(.default)
-            .padding()
-            .background(Color("textBackgroundGrayColor"))
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color("greenColor"), lineWidth: 0.5)
-            )
-            .multilineTextAlignment(.leading)
-            .frame(height: 100)
+            if !packageVM.packageItem.isEmpty {
+                
+                labelDefaultView(labelTitle: "ملاحظات اضافيه  ")
+                TextField(text: $newRequestVM.newRequestObject.notes ,
+                          label: {
+                    Text("يمكنك كتابة ملاحظات اضافيه .... ")
+                    //   Text("dasdas")
+                })
+                .textContentType(.addressState)
+                .keyboardType(.default)
+                .padding()
+                .background(Color("textBackgroundGrayColor"))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("greenColor"), lineWidth: 0.5)
+                )
+                .multilineTextAlignment(.leading)
+                .frame(height: 100)
+            }
+            
         }
     }
 }
