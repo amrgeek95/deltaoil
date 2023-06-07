@@ -21,6 +21,11 @@ struct tabView: View {
                     Image("requests")
                     Text("الطلبات")
                 }
+            moreView()
+                .tabItem{
+                    Image("more")
+                    Text("المزيد")
+                }
         }
         .shadow(color: .black, radius: 10, x: 0, y: 1)
         .tint(Color("tabGreenColor"))

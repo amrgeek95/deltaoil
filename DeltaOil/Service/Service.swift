@@ -33,6 +33,7 @@ enum httpMethod :String {
 
 enum EndPoint {
     static let baseUrl = "https://imextrading-co.com/deltaoil/"
+    static let loginUrl = "\(EndPoint.baseUrl)global/login"
     static let signupUrl = "\(EndPoint.baseUrl)global/signup"
     static let sliderUrl = "\(EndPoint.baseUrl)global/get_sliders"
     static let get_packages = "\(EndPoint.baseUrl)global/get_packages"

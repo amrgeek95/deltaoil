@@ -18,7 +18,7 @@ struct SplashScreen: View {
             if userSession.isLogged == true{
                 tabView()
             }else{
-                SignUpView()
+                loginView()
             }
         }else{
             ZStack {

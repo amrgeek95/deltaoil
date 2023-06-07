@@ -58,6 +58,7 @@
 		04FCFBAA297E97730091399D /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCFBA9297E97730091399D /* loginView.swift */; };
 		04FCFBAE297EE8250091399D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCFBAD297EE8250091399D /* Validation.swift */; };
 		04FCFBB1297EE8400091399D /* loginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCFBB0297EE8400091399D /* loginViewModel.swift */; };
+		2F2116122A2F6498000CF294 /* moreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2116112A2F6498000CF294 /* moreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,7 +133,9 @@
 		04EF16FD29925123005514B6 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		04FCFBA9297E97730091399D /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		04FCFBAD297EE8250091399D /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		04FCFBB0297EE8400091399D /* loginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewModel.swift; sourceTree = "<group>"; };
+		04FCFBB0297EE8400091399D /* loginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = loginViewModel.swift; path = ../ViewModel/loginViewModel.swift; sourceTree = "<group>"; };
+		2F2116112A2F6498000CF294 /* moreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreView.swift; sourceTree = "<group>"; };
+		2F2116132A30519C000CF294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +235,9 @@
 		04BB9E9B297569DC003B92BB /* DeltaOil */ = {
 			isa = PBXGroup;
 			children = (
+				2F2116132A30519C000CF294 /* Info.plist */,
+				2F21160E2A2F647F000CF294 /* More */,
+				2F21160B2A2F57E3000CF294 /* Login */,
 				04D364412998EB8A00DF1016 /* orders */,
 				04EF16FC299250F0005514B6 /* Service */,
 				040DFF712989061D001BE07B /* Signup */,
@@ -365,7 +371,6 @@
 			children = (
 				04B050C229814EDF0078263E /* staticScreen */,
 				04B050C129814ED60078263E /* preLoginViews */,
-				04FCFBA9297E97730091399D /* loginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,9 +389,25 @@
 		04FCFBAF297EE8330091399D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				04FCFBB0297EE8400091399D /* loginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2F21160B2A2F57E3000CF294 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				04FCFBA9297E97730091399D /* loginView.swift */,
+				04FCFBB0297EE8400091399D /* loginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2F21160E2A2F647F000CF294 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				2F2116112A2F6498000CF294 /* moreView.swift */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -565,6 +586,7 @@
 				04BB9EE0297579BC003B92BB /* homeView.swift in Sources */,
 				04FCFBAA297E97730091399D /* loginView.swift in Sources */,
 				04E4E4FC297DCAF000119C20 /* packageView.swift in Sources */,
+				2F2116122A2F6498000CF294 /* moreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +748,8 @@
 				DEVELOPMENT_TEAM = LCD84ACBQF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeltaOil/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -756,6 +780,8 @@
 				DEVELOPMENT_TEAM = LCD84ACBQF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeltaOil/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

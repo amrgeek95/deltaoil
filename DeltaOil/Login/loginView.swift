@@ -13,40 +13,51 @@ struct loginView: View {
     @Environment(\.managedObjectContext) var moc
     @StateObject var loginVM : loginViewModel = loginViewModel()
     @State var passwordTextField : String = ""
-    
+    @EnvironmentObject var session: userSetting
+
     
     var body: some View {
-        VStack {
+        VStack(alignment: .trailing) {
             topHeaderView()
             Spacer()
             VStack{
-                inputView
+                Text("تسجيل دخول")
+                    .foregroundColor(Color("greenColor"))
+                    .fontWeight(.medium)
+                    .font(.custom("Tajawal-Regular", size: 20))
+                    .multilineTextAlignment(.trailing)
+                    .frame(minWidth: 0,maxWidth: .infinity,alignment: .leading)
+
+                mobileNumberView
+                
+                passwordTextInput
                 Spacer()
             }
             .padding(.horizontal,20)
             VStack {
                 Button(action: {
-                    
+                    loginVM.showHome = true
                 }, label: {
                     ZStack{
-                        
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color("greenColor"), lineWidth: 1)
-                        Text("Sign up ? ")
+                        Text("تسجيل حساب جديد")
                             .foregroundColor(Color("greenColor"))
                             .font(.title3)
                             .fontWeight(.medium)
-                        
                     }
                 })
+                .sheet(isPresented: $loginVM.showHome) {
+                    SignUpView()
+                }
                 .frame(width: .infinity, height: 50, alignment: .top)
                 Button(action: {
-                    let userdata = User(context: moc)
-                    
+
+                    loginVM.loginAction()
                 }, label: {
                     ZStack{
                         
-                        Text("تسجيل الدخول ")
+                        Text("تسجيل دخول ")
                             .font(Font.custom("Tajawal-Regular", size: 20))
                             .foregroundColor(Color.white)
                             .font(.title3)
@@ -60,12 +71,11 @@ struct loginView: View {
                     
                     .cornerRadius(10)
                     
-                    // .background(Color.red)
                     
                     
                 })
-                .opacity(loginVM.loginValidate.buttonEnabled ? 1 : 0.5)
-                .disabled(!loginVM.loginValidate.buttonEnabled)
+                .opacity(loginVM.isFormValid ? 1 : 0.5)
+                .disabled(!loginVM.isFormValid)
             }
             .padding(.horizontal,20.0)
             .padding(.bottom,35.0)
@@ -81,14 +91,13 @@ struct topHeaderView : View {
         VStack{
             VStack{
                 ZStack (alignment: .center){
-                    Image("headerWithLogo")
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: .infinity, height: containerHeight, alignment: .top)
-                        .clipped()
+                    
                     Image("Logo")
                         .scaleEffect(0.8)
+                        .frame(width: .infinity, height: containerHeight, alignment: .center)
+
                 }.frame( idealWidth: .infinity, maxWidth: .infinity, idealHeight: containerHeight, maxHeight: containerHeight, alignment: .top)
+                    .background(appColors.greenColor)
                 RoundedCornersShape(corners: [.topLeft, .topRight], radius: 100.0)
                     .fill(Color.white)
                     .frame(width: UIScreen.main.bounds.size.width, height: 50, alignment: .bottom)
@@ -105,53 +114,32 @@ struct topHeaderView : View {
 struct loginView_Previews: PreviewProvider {
     static var previews: some View {
         loginView()
+            .environmentObject(userSetting())
+
     }
 }
 extension loginView {
+    var mobileNumberView : some View {
+        inputGenerator(input: $loginVM.mobileTextField,
+                       placeHolder: "رقم الجوال",
+                       isSecure: false,
+                       label: "رقم الجوال",
+                       contentType: .telephoneNumber,keyBoardType: .asciiCapableNumberPad
+                       ,prompt: loginVM.inlineErrors.mobile)
+    }
+    var passwordTextInput : some View {
+      
+        inputGenerator(input: $loginVM.passwordTextField, placeHolder: "برجاء كتابة رقم كلمة المرور", isSecure: true, label: "كلمة المرور",contentType: .password,keyBoardType: .default,prompt: loginVM.inlineErrors.password)
+        
+    }
+    
     var inputView : some View {
         
         Section{
-            VStack(alignment: .trailing,spacing: 10){
-                labelDefaultView(labelTitle: "Mobile Number")
-                TextField(text: $loginVM.mobileNumberTextField,
-                          label: {
-                    Text(loginVM.loginValidate.mobileErrorText)
-                    //   Text("dasdas")
-                }).onChange(of: loginVM.mobileNumberTextField){ _ in
-                    loginVM.validateMobileInput()
-                }
-                .textContentType(.telephoneNumber)
-                .keyboardType(.phonePad)
-                .padding()
-                .background(Color("textBackgroundGrayColor"))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(loginVM.loginValidate.mobileError ? Color.red : Color("greenColor"), lineWidth: 0.5)
-                )
-                .multilineTextAlignment(.trailing)
-                
-                errorMessageLabel(labelTitle: loginVM.loginValidate.mobileErrorText)
-                //error message for mobile number
-                //Password
-                labelDefaultView(labelTitle: "Password")
-                
-                SecureField(text: $loginVM.passwordTextField, label: {
-                    Text(loginVM.loginValidate.passwordErrorText)
-                    //   Text("dasdas")
-                }).onChange(of: loginVM.passwordTextField, perform: { _ in
-                    loginVM.validatePasswordInput()
-                })
-                .textContentType(.telephoneNumber)
-                .keyboardType(.phonePad)
-                .padding()
-                .background(Color("textBackgroundGrayColor"))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(loginVM.loginValidate.passwordError ? Color.red : Color("greenColor"), lineWidth: 0.5)
-                )
-                .multilineTextAlignment(.trailing)
-                errorMessageLabel(labelTitle: loginVM.loginValidate.passwordErrorText)
+            VStack(alignment: .leading,spacing: 10){
 
+                mobileNumberView
+                passwordTextInput
             }
             
             
@@ -159,8 +147,11 @@ extension loginView {
         }header: {
             HStack(alignment:.top){
                 Spacer()
-                Text("Login")
+                Text("تسجيل دخول")
+                    
                     .font(.title)
+                    .font(Font.custom("Tajawal-Regular", size: 20))
+
                     .foregroundColor(Color("greenColor"))
                     .fontWeight(.medium)
             }

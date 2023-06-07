@@ -12,8 +12,8 @@ struct labelDefaultView :View {
     var body:some View {
         Text(labelTitle)
             .foregroundColor(.secondary)
-            .font(.headline)
-        
+            .font(.custom("Tajawal-Regular", size: 20))
+
     }
 }
 struct errorMessageLabel : View {
@@ -28,6 +28,6 @@ struct errorMessageLabel : View {
 
 struct inputCustomView_Previews: PreviewProvider {
     static var previews: some View {
-        labelDefaultView(labelTitle: "" )
+        labelDefaultView(labelTitle: "amr" )
     }
 }

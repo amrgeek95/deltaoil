@@ -1,18 +1,19 @@
 //
-//  signupViewModel.swift
+//  loginViewModel.swift
 //  DeltaOil
 //
-//  Created by Mac on 31/01/2023.
+//  Created by Amr Sobhy on 06/06/2023.
 //
 
-
 import Foundation
+
+
 import Combine
 
 import SwiftUI
 
 
-class signupViewModel:ObservableObject {
+class loginViewModel:ObservableObject {
     
     @AppStorage("userData") var userData = Data()
      var userSession :userSetting!
@@ -300,7 +301,7 @@ class signupViewModel:ObservableObject {
                 if data.status ==  true {
                     do {
                         
-                        self?.userSession.isLogged = true
+                    //    self?.userData = try JSONEncoder().encode(data.data)
                         self?.userSession.userInfo = data.data
                         self?.showHome.toggle()
                     }
@@ -317,61 +318,3 @@ class signupViewModel:ObservableObject {
         
     }
 }
-
-enum SignupError: LocalizedError {
-    case custom(error: Error)
-    case customMessage(error: String)
-    case failedToDecode
-    case areaModel
-    case invalidStatusCode
-    var errorDescription: String? {
-        switch self {
-        case .areaModel:
-            return "Area model"
-        case .failedToDecode:
-            return "Failed to decode response"
-        case .custom(let error):
-            return error.localizedDescription
-        case .customMessage(let error):
-            return error
-        case .invalidStatusCode:
-            return "Request doesn't fall in the valid status code"
-        }
-    }
-}
-enum inputValidationError {
-    case custom(error:String)
-    case name , mobile,email,city,area,address,password
-    case valid,inValid
-    var errorDescription: String {
-        switch self {
-        case .name:
-            return "برجاء كتابة الاسم"
-        case .mobile:
-            return "برجاء كتابة رقم الجوال ١١ رقم"
-        case .email:
-            return "برجاء كتابة بريد الكتروني مناسب"
-        case .password:
-            return "برجاء كتابة كلمة مرور اكتر من ٦ احرف"
-        case .city:
-            return "برجاء اختيار المدينة"
-        case .address:
-            return "برجاء كتابة العنوان بشكل تفصيلي"
-        default:
-            return ""
-        }
-        
-    }
-    var inputStatus :Bool? {
-        switch self {
-        case .valid:
-            return true
-        case .inValid :
-            return false
-        default:
-            return false
-        }
-    }
-    
-}
-

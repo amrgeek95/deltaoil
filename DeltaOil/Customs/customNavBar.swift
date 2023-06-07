@@ -15,9 +15,6 @@ struct customNavBar: View {
     var body: some View {
         VStack{
             ZStack{
-                
-                Image("headerShape")
-                    .resizable()
                 VStack{
                     HStack{
                         if !backBtnHidden {
@@ -47,6 +44,8 @@ struct customNavBar: View {
                         .frame(width: UIScreen.main.bounds.size.width, height: 50, alignment: .bottom)
                         .offset(y:0)
                 }
+                .background(appColors.greenColor)
+
                 
                 
             }
