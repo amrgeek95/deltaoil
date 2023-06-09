@@ -62,8 +62,8 @@ struct customNavBar: View {
 extension customNavBar {
     private var titleView : some View {
         Text(title)
+            .modifier(headerTitleCustomFont())
             .foregroundColor(Color.white)
-        
     }
 }
 

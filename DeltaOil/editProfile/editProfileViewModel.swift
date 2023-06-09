@@ -1,30 +1,25 @@
 //
-//  signupViewModel.swift
+//  editProfileViewModel.swift
 //  DeltaOil
 //
-//  Created by Mac on 31/01/2023.
+//  Created by Amr Sobhy on 08/06/2023.
 //
-
 
 import Foundation
 import Combine
-
 import SwiftUI
-
-
-class signupViewModel:ObservableObject {
+class editProfileViewModel : ObservableObject {
     
     @AppStorage("userData") var userData = Data()
      var userSession :userSetting!
 
-    @Published var showHome:Bool = false
+    @Published var dataSaved:Bool = false
 
     
     
-    @Published var mobileTextField:String = ""
-    @Published var nameTextField:String = ""
+    @Published var mobileTextField:String = "1234"
+    @Published var nameTextField:String = "amora"
     @Published var emailTextField:String = ""
-    @Published var passwordTextField:String = ""
     @Published var addressTextField:String = ""
     
     @Published var inlineErrors = (name:"",email:"",passwod:"",mobile:"",address:"",city:"",password:"")
@@ -32,7 +27,7 @@ class signupViewModel:ObservableObject {
     @Published  var selectedCity : CitiesModel = CitiesModel(id: "-1", name: "")
     @Published  var selectedArea : AreasModel = AreasModel(id: "",name: "")
     
-    @Published var selectPlaceHolder = (city:"برجاء اختيار المحافظة" , area:"برجاء اختيار المنطقة")
+    @Published var selectPlaceHolder = (city:"برجاء اختيار المدينة" , area:"برجاء اختيار المنطقة")
     
     @Published var showAreaSection = false
     
@@ -47,8 +42,8 @@ class signupViewModel:ObservableObject {
     @Published var cancellable = Set<AnyCancellable>()
     private var bag = Set<AnyCancellable>()
     
-    
-    
+    @Published var showalert = false
+    @Published var alertMessage = ""
     
     
     var nameValid:AnyPublisher<inputValidationError,Never>{
@@ -101,21 +96,6 @@ class signupViewModel:ObservableObject {
             }
             .eraseToAnyPublisher()
     }
-    
-    var passwordValid:AnyPublisher<inputValidationError,Never>{
-        $passwordTextField
-            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-            .map{
-                if $0.count > 5 {
-                    self.inlineErrors.password = ""
-                    return  inputValidationError.valid
-                }else{
-                    self.inlineErrors.password = ($0.isEmpty) ? "" : inputValidationError.password.errorDescription
-                    return   inputValidationError.password
-                }
-            }
-            .eraseToAnyPublisher()
-    }
     var addressValid:AnyPublisher<inputValidationError,Never>{
         $addressTextField
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
@@ -148,9 +128,9 @@ class signupViewModel:ObservableObject {
     
     
     private var allInputValid :AnyPublisher<Bool,Never>{
-        let validate1 =  Publishers.CombineLatest4(nameValid, mobileValid, emailValid, passwordValid)
-            .map{ name , mobile , email , password in
-                if name.inputStatus ==  true && mobile.inputStatus == true && email.inputStatus == true && password.inputStatus == true {
+        let validate1 =  Publishers.CombineLatest3(nameValid, mobileValid, emailValid)
+            .map{ name , mobile , email  in
+                if name.inputStatus ==  true && mobile.inputStatus == true && email.inputStatus == true {
                     return true
                 }
                 return false
@@ -178,15 +158,26 @@ class signupViewModel:ObservableObject {
     }
     
     init() {
-
         
         allInputValid
             .assign(to: \.isFormValid, on: self)
             .store(in: &cancellable)
     }
     
+    
     func setUp(session:userSetting){
         self.userSession = session
+
+        guard let user = userSession.userInfo else {return }
+        self.nameTextField = user.name
+        self.mobileTextField = user.mobile
+        self.addressTextField = user.address
+        self.emailTextField = user.email
+        self.selectedCity = CitiesModel(id: user.city_id, name: user.cityname)
+        self.selectedArea = AreasModel(id: user.area_id, name: user.areaname)
+        self.selectPlaceHolder.city = user.cityname
+        self.selectPlaceHolder.area = user.areaname
+        
     }
     
     func getCities() {
@@ -259,27 +250,30 @@ class signupViewModel:ObservableObject {
             }
             .store(in: &bag)
     }
-    func signUp(){
+    func saveAction(){
+        guard let user = userSession.userInfo else {return }
         
         if !isFormValid {
             self.hasError = true
             self.error = SignupError.customMessage(error: "برجاء ملئ البيانات اولا")
-
             return
         }
-        guard let urlComponent = NSURLComponents(string: EndPoint.signupUrl) else {
+        guard let urlComponent = NSURLComponents(string: EndPoint.editProfile) else {
             return
         }
         urlComponent.queryItems = [
+            URLQueryItem(name: "id", value: user.id),
             URLQueryItem(name: "name", value: nameTextField),
             URLQueryItem(name: "mobile", value: mobileTextField),
-            URLQueryItem(name: "password", value: passwordTextField),
             URLQueryItem(name: "email", value: emailTextField),
             URLQueryItem(name: "city_id", value: selectedCity.id),
             URLQueryItem(name: "area_id", value: selectedArea.id),
             URLQueryItem(name: "address", value: addressTextField)
         ]
         let _ = print(urlComponent.queryItems)
+        
+        
+        print(urlComponent.queryItems)
         
         var urlRequest = URLRequest(url: urlComponent.url!)
         urlRequest.httpMethod = "GET"
@@ -301,9 +295,12 @@ class signupViewModel:ObservableObject {
                 if data.status ==  true {
                     do {
                         
+
+                        self?.showalert = true
+                        self?.alertMessage = "تم تعديل البيانات بنجاح"
                         self?.userSession.isLogged = true
                         self?.userSession.userInfo = data.data
-                        self?.showHome.toggle()
+                        self?.dataSaved.toggle()
                     }
                     catch{
                         
@@ -318,59 +315,3 @@ class signupViewModel:ObservableObject {
         
     }
 }
-
-enum SignupError: LocalizedError {
-    case custom(error: Error)
-    case customMessage(error: String)
-    case failedToDecode
-    case areaModel
-    case invalidStatusCode
-    var errorDescription: String? {
-        switch self {
-        case .areaModel:
-            return "Area model"
-        case .failedToDecode:
-            return "Failed to decode response"
-        case .custom(let error):
-            return error.localizedDescription
-        case .customMessage(let error):
-            return error
-        case .invalidStatusCode:
-            return "Request doesn't fall in the valid status code"
-        }
-    }
-}
-enum inputValidationError {
-    case custom(error:String)
-    case name , mobile,email,city,area,address,password
-    case valid,inValid
-    var errorDescription: String {
-        switch self {
-        case .name:
-            return "برجاء كتابة الاسم"
-        case .mobile:
-            return "برجاء كتابة رقم الجوال ١١ رقم"
-        case .email:
-            return "برجاء كتابة بريد الكتروني مناسب"
-        case .password:
-            return "برجاء كتابة كلمة مرور اكتر من ٦ احرف"
-        case .city:
-            return "برجاء اختيار المدينة"
-        case .address:
-            return "برجاء كتابة العنوان بشكل تفصيلي"
-        default:
-            return ""
-        }
-    }
-    var inputStatus :Bool? {
-        switch self {
-        case .valid:
-            return true
-        case .inValid :
-            return false
-        default:
-            return false
-        }
-    }
-}
-

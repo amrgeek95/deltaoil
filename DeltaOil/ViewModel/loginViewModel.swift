@@ -82,7 +82,9 @@ class loginViewModel : ObservableObject {
         
         
     }
-    
+    func setUp(session:userSetting){
+        self.userSession = session
+    }
     func enableButton(){
         if self.loginValidate.passwordError == true || self.loginValidate.mobileError == true {
             self.loginValidate.buttonEnabled = false

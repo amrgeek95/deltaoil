@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+#if canImport(UIKit)
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+#endif
+
 struct inputGenerator: View {
     @Binding var input : String
     var placeHolder: String
@@ -17,7 +25,7 @@ struct inputGenerator: View {
     var borderColor = appColors.greenColor
     var prompt:String = ""
     var body: some View {
-        VStack(alignment:.trailing){
+        VStack(alignment:.leading){
             
             labelDefaultView(labelTitle: label)
             if isSecure {
@@ -31,21 +39,22 @@ struct inputGenerator: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color("greenColor"), lineWidth: 0.5)
                     )
-                    .multilineTextAlignment(.trailing)
+                    .multilineTextAlignment(.leading)
             }else{
                 TextField(text: $input,
                           label: {
                     Text("")
                     //   Text("dasdas")
-                })        .textContentType(.telephoneNumber)
-                    .keyboardType(.phonePad)
+                })
+                .textContentType(contentType ?? .givenName)
+                .keyboardType(keyBoardType ?? .default)
                     .padding()
                     .background(Color("textBackgroundGrayColor"))
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(borderColor, lineWidth: 0.5)
                     )
-                    .multilineTextAlignment(.trailing)
+                    .multilineTextAlignment(.leading)
             }
             if !prompt.isEmpty {
                 Text(prompt)
@@ -62,7 +71,7 @@ struct inputGenerator: View {
 
 struct inputGenerator_Previews: PreviewProvider {
     static var previews: some View {
-        inputGenerator(input: .constant(""), placeHolder: "hello", isSecure: false,label: "ll",contentType: UITextContentType.telephoneNumber,keyBoardType: UIKeyboardType.default)
+        inputGenerator(input: .constant(""), placeHolder: "hello", isSecure: false,label: "js[dg ",contentType: UITextContentType.telephoneNumber,keyBoardType: UIKeyboardType.default)
         
     }
 }

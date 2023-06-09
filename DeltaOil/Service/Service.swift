@@ -30,13 +30,16 @@ enum httpMethod :String {
     case post = "POST"
 }
 
-
+var checkReviewStatus = false
 enum EndPoint {
     static let baseUrl = "https://imextrading-co.com/deltaoil/"
     static let loginUrl = "\(EndPoint.baseUrl)global/login"
     static let signupUrl = "\(EndPoint.baseUrl)global/signup"
+    static let editProfile = "\(EndPoint.baseUrl)global/edit"
     static let sliderUrl = "\(EndPoint.baseUrl)global/get_sliders"
     static let get_packages = "\(EndPoint.baseUrl)global/get_packages"
+    static let send_feedback = "\(EndPoint.baseUrl)global/send_feedback"
+    static let checkReview = "\(EndPoint.baseUrl)global/check_review"
 }
 extension EndPoint {
     static let cityUrl = "\(EndPoint.baseUrl)global/cities"
@@ -115,6 +118,7 @@ final class NetworkLayer:NetworkProtocol {
                 let getresponse = try JSONDecoder().decode(responseSave.self, from: data)
                 DispatchQueue.main.async {
                     print(getresponse)
+                    
                     if getresponse.status {
                         completion(Result.success(getresponse.message))
                     }else{

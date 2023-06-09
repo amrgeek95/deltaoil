@@ -72,7 +72,7 @@ class packageViewModel : ObservableObject {
         }.resume()
     }
     
-    func getPackages (size:String = "0"){
+    func getPackages (size:String = ""){
 
         guard let url = URL(string:"https://imextrading-co.com/deltaoil/global/packages?size=\(size)") else {
             return

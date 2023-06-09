@@ -11,18 +11,21 @@ import Combine
 struct fetchUrlImage:View{
     let imageUrl:String
     @State var data:Data?
-    
+    @State var placeHolder:String = "placeholder"
+
     var body: some View {
     
         if let data = data , let uiimage = UIImage(data: data) {
             Image(uiImage: uiimage)
                 .resizable()
                 .scaledToFit()
+                .clipped()
         }else{
-            Image(systemName: "video")
+            Image(placeHolder)
                 .resizable()
                 .scaledToFit()
                 .onAppear{loadImageFromUrl()}
+                .clipped()
         }
     }
     func loadImageFromUrl(){

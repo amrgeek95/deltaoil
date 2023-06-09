@@ -49,8 +49,9 @@ struct homeView: View {
 
                 VStack(spacing:0.0) {
                     if !homeVM.sliders.isEmpty {
-                        fetchUrlImage(imageUrl: homeVM.sliders.first?.image ?? "")
+                        fetchUrlImage(imageUrl: homeVM.sliders.first?.image ?? "",placeHolder: "")
                             .frame(idealHeight: 200.0,maxHeight: 200)
+                            .padding(.bottom,15)
 
                     }
                     newRequestView()
@@ -82,80 +83,6 @@ struct RoundedCornersShape: Shape {
     }
 }
 
-struct homeSliderView: View {
-    var containerHeight = UIScreen.main.bounds.size.height * 0.22
-    var title:String
-    var body: some View {
-        ZStack {
-            Image("Slider")
-                .resizable()
-                .clipped()
-                .cornerRadius(10)
-            HStack{
-                Image("Man")
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.trailing,10.0)
-                    .padding(.leading,0)
-                    .frame(alignment: .bottom)
-                
-                Spacer()
-                VStack {
-                    Spacer()
-                    Text(title)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.trailing)
-                        .padding(.bottom, 10.0)
-                    
-                    Text ("استبدل الزيت المستعمل بمواد عينية")
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.trailing)
-                }
-                .padding([.bottom, .trailing], 10.0)
-                .frame( maxHeight: containerHeight)
-                
-                .clipped()
-
-            }
-        }
-        .padding(.horizontal,10.0)
-        .padding(.bottom,10.0)
-        .frame(width: UIScreen.main.bounds.size.width , height: containerHeight)
-    }
-}
-
-struct homeItemView: View {
-    var containerHeight = UIScreen.main.bounds.size.height * 0.17
-     var title : String
-     var mainIcon : String
-     var leftIcon : String
-     var itemColor : String
-     var body: some View {
-         ZStack {
-             Rectangle()
-             .fill(Color(itemColor))
-             .cornerRadius(20.0)
-             .padding(.horizontal,10)
-             VStack(alignment: .leading){
-                 Image(mainIcon)
-                     .frame( alignment: .trailing)
-                     .padding(.bottom,10)
-                 HStack{
-                     Text(title)
-                         .foregroundColor(Color.primary)
-                     Spacer()
-                     Image(leftIcon)
-                         
-                 }
-             }
-             .padding(.horizontal,30)
-
-         }
-         .frame(maxWidth: .infinity, idealHeight: containerHeight,maxHeight:containerHeight)
-
-
-
-    }
-}
 
 struct homeView_Previews: PreviewProvider {
     static var previews: some View {

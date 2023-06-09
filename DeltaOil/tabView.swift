@@ -8,24 +8,26 @@
 import SwiftUI
 
 struct tabView: View {
+    @State var tabSelection: Int = 1
+
     var body: some View {
-        TabView {
+        TabView (selection: $tabSelection){
             homeView()
                 .tabItem{
                     Image("home")
                     Text("الرئيسية")
                         //.font(font)
-                }
+                }.tag(1)
             orderView()
                 .tabItem{
                     Image("requests")
                     Text("الطلبات")
-                }
-            moreView()
+                }.tag(2)
+                        moreView()
                 .tabItem{
                     Image("more")
                     Text("المزيد")
-                }
+                }.tag(3)
         }
         .shadow(color: .black, radius: 10, x: 0, y: 1)
         .tint(Color("tabGreenColor"))
@@ -36,6 +38,6 @@ struct tabView: View {
 
 struct tabView_Previews: PreviewProvider {
     static var previews: some View {
-        tabView()
+        tabView(tabSelection: 0)
     }
 }

@@ -23,7 +23,6 @@ struct SignUpView: View {
                         nameTextInput
                         mobileNumberView
                         emailTextInput
-                        passwordTextInput
                         addressTextInput
                         cityPickerInput
                         areaPickerInput
@@ -33,6 +32,8 @@ struct SignUpView: View {
                             
                     } header: {
                         Text("تسجيل جديد")
+                            .modifier(buttonCustomFont())
+
                     }
                 }.padding(.horizontal,20)
                     .padding(.bottom,20)
@@ -49,6 +50,9 @@ struct SignUpView: View {
             }
             
             .ignoresSafeArea()
+            .onTapGesture {
+                      self.hideKeyboard()
+                    }
         }
     }
 }
@@ -74,11 +78,7 @@ extension SignUpView {
         
     }
     
-    var passwordTextInput : some View {
-      
-        inputGenerator(input: $signupVM.passwordTextField, placeHolder: "برجاء كتابة رقم كلمة المرور", isSecure: true, label: "كلمة المرور",contentType: .password,keyBoardType: .default,prompt: signupVM.inlineErrors.password)
-        
-    }
+   
     var addressTextInput : some View {
         
         inputGenerator(input: $signupVM.addressTextField, placeHolder: "برجاء كتابة العنوان", isSecure: false, label: "العنوان",contentType: .fullStreetAddress,keyBoardType: .default,prompt: signupVM.inlineErrors.address)
@@ -89,6 +89,8 @@ extension SignUpView {
     var cityPickerInput : some View {
         VStack(alignment:.trailing){
             labelDefaultView(labelTitle: signupVM.selectPlaceHolder.city)
+                .frame(minWidth: 0,maxWidth: .infinity,alignment: .leading)
+
             Menu(signupVM.selectPlaceHolder.city) {
                 Picker(selection: $signupVM.selectedCity, label: Text("")) {
                     ForEach(signupVM.cities, id: \.self) { city in
@@ -99,7 +101,7 @@ extension SignUpView {
                            signupVM.getAreas()
                 }
             }
-            .frame(minWidth: 0,maxWidth: .infinity,alignment: .trailing)
+            .frame(minWidth: 0,maxWidth: .infinity,alignment: .leading)
                 .padding()
                 .background(appColors.textBGGrayColor)
                 .overlay(
@@ -114,6 +116,8 @@ extension SignUpView {
        
         VStack(alignment:.trailing){
             labelDefaultView(labelTitle: "برجاء اختيار المنطقة")
+                .frame(minWidth: 0,maxWidth: .infinity,alignment: .leading)
+
             Menu(signupVM.selectPlaceHolder.area) {
                 Picker(selection: $signupVM.selectedArea, label: Text("")) {
                     ForEach(signupVM.areas, id: \.self) { area in
@@ -123,7 +127,7 @@ extension SignUpView {
                            signupVM.selectPlaceHolder.area = signupVM.selectedArea.name ?? "amr"
                        }
             }
-            .frame(minWidth: 0,maxWidth: .infinity,alignment: .trailing)
+            .frame(minWidth: 0,maxWidth: .infinity,alignment: .leading)
                 .padding()
                 .background(appColors.textBGGrayColor)
                 .overlay(
@@ -141,6 +145,8 @@ extension SignUpView {
             signupVM.signUp()
         }, label: {
             Text("تسجيل حساب")
+                .modifier(buttonCustomFont())
+
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .top)
             .padding()
             .foregroundColor(Color.white)

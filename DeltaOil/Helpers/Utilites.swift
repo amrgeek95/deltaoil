@@ -31,6 +31,4 @@ enum appColors {
     static let borderGrayColor = Color("borderGrayColor")
     static let seperatorColor = Color("seperatorColor")
     static let backgroundGreenColor = Color("greenBoxColor")
-    
-
 }

@@ -26,7 +26,7 @@ struct newRequestView: View {
     @StateObject var newRequestVM:newRequestViewModel = newRequestViewModel()
     @StateObject var packageVM = packageViewModel()
     @StateObject var packageEnviroment : packageEnviromentObject = packageEnviromentObject()
-    
+    @State var showOrderPage = false
     
     
     var body: some View {
@@ -58,8 +58,8 @@ struct newRequestView: View {
                         }else{
                             newRequestVM.submitAction()
                         }
+                        self.hideKeyboard()
 
-                       // newRequestVM.submitAction()
                     }, label: {
                         if newRequestVM.loadingChecker {
                             HStack{
@@ -75,6 +75,7 @@ struct newRequestView: View {
 
                         }else{
                             Text(packageVM.textOnSubmitAction)
+                                .modifier(buttonCustomFont())
                                 .fontWeight(.bold)
                                 .padding()
                                 .frame(maxWidth: .infinity)
@@ -86,6 +87,7 @@ struct newRequestView: View {
                         
                     })
                     .disabled(newRequestVM.loadingChecker)
+                    .padding(.bottom,30)
                     
                 }
                 
@@ -95,17 +97,24 @@ struct newRequestView: View {
             
             
         }
-        .alert("عفوا", isPresented: $newRequestVM.showAlert, actions: {
+        .onTapGesture {
+                  self.hideKeyboard()
+                }
+
+        
+        .alert(newRequestVM.alertErrorMessage, isPresented: $newRequestVM.showAlert, actions: {
             Button(action: {
-                newRequestVM.alertErrorMessage = ""
-                newRequestVM.showAlert = false
+                showOrderPage = true
             }, label: {
-                Text("حسنا")
+                Text("يمكنك متابعة الحجز من صفحة الطلبات")
             })
+            
         })
+        .fullScreenCover(isPresented: $showOrderPage) {
+            tabView(tabSelection: 2)
+        }
         .onAppear{
             newRequestVM.setup(package:packageEnviroment,session: userObject)
-//            packageVM.getPackages()
         }
         
         .navigationBarHidden(true)
@@ -130,8 +139,12 @@ extension newRequestView {
                 TextField(text: $newRequestVM.newRequestObject.oil_amount ,
                           label: {
                     Text("الكمية المتوقعة ( حد ادني ٢ كجم) ")
-                    //   Text("dasdas")
+                        .modifier(textAreaCustomFont())
                 })
+                .onTapGesture {
+                          self.hideKeyboard()
+                        }
+
                 .textContentType(.telephoneNumber)
                 .keyboardType(.asciiCapableNumberPad)
                 .onChange(of: newRequestVM.newRequestObject.oil_amount){ newvalue in
@@ -149,17 +162,13 @@ extension newRequestView {
 
                 }
                 Text("| كجم")
+                    .modifier(subLabelCustomFont())
                     .foregroundColor(.gray)
             }
             
             .padding()
             .background(Color("textBackgroundGrayColor"))
             .cornerRadius(10)
-//            .overlay(
-//                RoundedRectangle(cornerRadius: 10)
-//                    .stroke(.white, lineWidth: 1.5)
-//            )
-            
             .multilineTextAlignment(.leading)
         }
     }
@@ -170,11 +179,11 @@ extension newRequestView {
         VStack(alignment: .leading) {
             if !packageVM.packageItem.isEmpty {
                 
-                labelDefaultView(labelTitle: "ملاحظات اضافيه  ")
+                labelDefaultView(labelTitle: "ملاحظات اضافيه ")
                 TextField(text: $newRequestVM.newRequestObject.notes ,
                           label: {
                     Text("يمكنك كتابة ملاحظات اضافيه .... ")
-                    //   Text("dasdas")
+                        .modifier(subLabelCustomFont())
                 })
                 .textContentType(.addressState)
                 .keyboardType(.default)

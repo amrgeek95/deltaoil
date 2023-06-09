@@ -17,6 +17,7 @@ class newRequestViewModel:ObservableObject {
     @Published var currentOilCount = 0
     @Published var loadingChecker = false
     @Published var showAlert = false
+    @Published var showOrderPage = false
     @Published var alertErrorMessage = ""
     @Published var packageobject :packageEnviromentObject!
     var userSession :userSetting!
@@ -104,6 +105,7 @@ class newRequestViewModel:ObservableObject {
                 guard let self = self else { return  }
                 switch result {
                 case .success(let response):
+                    
                     print(response)
                     self.loadingChecker = false
                     self.showAlert = true

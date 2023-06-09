@@ -59,6 +59,10 @@
 		04FCFBAE297EE8250091399D /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCFBAD297EE8250091399D /* Validation.swift */; };
 		04FCFBB1297EE8400091399D /* loginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FCFBB0297EE8400091399D /* loginViewModel.swift */; };
 		2F2116122A2F6498000CF294 /* moreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2116112A2F6498000CF294 /* moreView.swift */; };
+		2F3DF8852A331B2C00209F08 /* packageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3DF8842A331B2C00209F08 /* packageListView.swift */; };
+		2F8B97FB2A319E8500D9A4CF /* editProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B97FA2A319E8500D9A4CF /* editProfileViewModel.swift */; };
+		2F8B97FD2A319E8E00D9A4CF /* editProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8B97FC2A319E8E00D9A4CF /* editProfileView.swift */; };
+		2FF212862A30ADD100050C36 /* customModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF212852A30ADD100050C36 /* customModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +140,10 @@
 		04FCFBB0297EE8400091399D /* loginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = loginViewModel.swift; path = ../ViewModel/loginViewModel.swift; sourceTree = "<group>"; };
 		2F2116112A2F6498000CF294 /* moreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreView.swift; sourceTree = "<group>"; };
 		2F2116132A30519C000CF294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F3DF8842A331B2C00209F08 /* packageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = packageListView.swift; sourceTree = "<group>"; };
+		2F8B97FA2A319E8500D9A4CF /* editProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfileViewModel.swift; sourceTree = "<group>"; };
+		2F8B97FC2A319E8E00D9A4CF /* editProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editProfileView.swift; sourceTree = "<group>"; };
+		2FF212852A30ADD100050C36 /* customModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +201,7 @@
 				040DFF7629890FB0001BE07B /* Constant.swift */,
 				04E3F5AF298BFB7300EC78F8 /* inputGenerator.swift */,
 				04D364462998F45400DF1016 /* seperatorCustomView.swift */,
+				2FF212852A30ADD100050C36 /* customModifier.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -235,6 +244,8 @@
 		04BB9E9B297569DC003B92BB /* DeltaOil */ = {
 			isa = PBXGroup;
 			children = (
+				2F3DF8832A331B1E00209F08 /* PackageList */,
+				2F8B97F92A319E6E00D9A4CF /* editProfile */,
 				2F2116132A30519C000CF294 /* Info.plist */,
 				2F21160E2A2F647F000CF294 /* More */,
 				2F21160B2A2F57E3000CF294 /* Login */,
@@ -410,6 +421,23 @@
 			path = More;
 			sourceTree = "<group>";
 		};
+		2F3DF8832A331B1E00209F08 /* PackageList */ = {
+			isa = PBXGroup;
+			children = (
+				2F3DF8842A331B2C00209F08 /* packageListView.swift */,
+			);
+			path = PackageList;
+			sourceTree = "<group>";
+		};
+		2F8B97F92A319E6E00D9A4CF /* editProfile */ = {
+			isa = PBXGroup;
+			children = (
+				2F8B97FA2A319E8500D9A4CF /* editProfileViewModel.swift */,
+				2F8B97FC2A319E8E00D9A4CF /* editProfileView.swift */,
+			);
+			path = editProfile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -562,9 +590,11 @@
 				04EF16FE29925123005514B6 /* Service.swift in Sources */,
 				048977002976A9BA005E0189 /* newOrderView.swift in Sources */,
 				040DFF7729890FB0001BE07B /* Constant.swift in Sources */,
+				2FF212862A30ADD100050C36 /* customModifier.swift in Sources */,
 				04FCFBAE297EE8250091399D /* Validation.swift in Sources */,
 				040EEFFF2985494A00C2FD30 /* packageModel.swift in Sources */,
 				040DFF7A2989AA47001BE07B /* signupViewModel.swift in Sources */,
+				2F3DF8852A331B2C00209F08 /* packageListView.swift in Sources */,
 				040DFF732989062C001BE07B /* SignUpView.swift in Sources */,
 				04B050C429814EF20078263E /* contactUsView.swift in Sources */,
 				04D364452998EC7900DF1016 /* orderItemView.swift in Sources */,
@@ -577,6 +607,7 @@
 				04BB9E9D297569DC003B92BB /* DeltaOilApp.swift in Sources */,
 				043408852A2ED3D1000F1A91 /* sliderModel.swift in Sources */,
 				040DFF6E29878EB6001BE07B /* validation.swift in Sources */,
+				2F8B97FD2A319E8E00D9A4CF /* editProfileView.swift in Sources */,
 				04BB9EA9297569DD003B92BB /* DeltaOil.xcdatamodeld in Sources */,
 				040DFF6C29867A93001BE07B /* customInputViews.swift in Sources */,
 				040EEFFD2985492500C2FD30 /* packageViewModel.swift in Sources */,
@@ -584,6 +615,7 @@
 				040DFF662986758D001BE07B /* newRequestViewModel.swift in Sources */,
 				04B050C62982A6CE0078263E /* Utilites.swift in Sources */,
 				04BB9EE0297579BC003B92BB /* homeView.swift in Sources */,
+				2F8B97FB2A319E8500D9A4CF /* editProfileViewModel.swift in Sources */,
 				04FCFBAA297E97730091399D /* loginView.swift in Sources */,
 				04E4E4FC297DCAF000119C20 /* packageView.swift in Sources */,
 				2F2116122A2F6498000CF294 /* moreView.swift in Sources */,
@@ -761,7 +793,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = codegrow.DeltaOil;
+				PRODUCT_BUNDLE_IDENTIFIER = codegrow.DeltaOil.amr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -793,7 +825,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = codegrow.DeltaOil;
+				PRODUCT_BUNDLE_IDENTIFIER = codegrow.DeltaOil.amr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

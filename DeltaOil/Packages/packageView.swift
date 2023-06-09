@@ -23,22 +23,24 @@ struct pcgItem:View {
         VStack(alignment:.leading) {
             HStack(spacing:2){
                 fetchUrlImage(imageUrl: package.image)
-                    .frame(height: 50, alignment: .leading)
-                    .frame(maxWidth:50)
+                    .frame(height: 60, alignment: .leading)
+                    .frame(maxWidth:60)
                 VStack(alignment:.leading) {
                     
                     Text("\(package.name) = (\(package.size) كجم)")
+                        .modifier(packageTitleCustomFont())
                         .frame(minWidth: 0,maxWidth: .infinity,alignment: .leading)
                         .font(.body)
                         .foregroundColor(Color.primary)
                         .frame(maxWidth: .infinity)
                         .multilineTextAlignment(.leading)
                     Text(package.description)
+                        .modifier(packageBodyCustomFont())
                         .frame(minWidth: 0,maxWidth: .infinity,alignment: .leading)
                         .font(.caption)
                         .foregroundColor(Color.secondary)
                 }
-                .padding(.horizontal,20)
+                .padding(.horizontal,10)
                 HStack{
                     Button(action: {
                         plusAction()
@@ -53,7 +55,7 @@ struct pcgItem:View {
 
                     })
                 }
-                .frame(maxWidth: 90)
+                .frame(maxWidth: 80)
              }
             .padding()
             .frame(maxWidth: .infinity,idealHeight: 100)
@@ -133,7 +135,6 @@ struct packageView: View {
     @State var currentOilCount = 5
     @State var itemPackage = [requestPackage(id: "", size: 0, quantiy: 0)]
     var body: some View {
-        
         VStack {
         ForEach(packageVM.packageItem, id: \.id) { package in
             pcgItem(package: package,max_count: $maxCount,currentOilCount: $currentOilCount)

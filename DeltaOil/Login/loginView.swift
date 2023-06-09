@@ -24,13 +24,13 @@ struct loginView: View {
                 Text("تسجيل دخول")
                     .foregroundColor(Color("greenColor"))
                     .fontWeight(.medium)
-                    .font(.custom("Tajawal-Regular", size: 20))
-                    .multilineTextAlignment(.trailing)
+                    .modifier(buttonCustomFont())
                     .frame(minWidth: 0,maxWidth: .infinity,alignment: .leading)
-
+                    .padding(.bottom,10)
                 mobileNumberView
                 
                 passwordTextInput
+
                 Spacer()
             }
             .padding(.horizontal,20)
@@ -42,6 +42,8 @@ struct loginView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color("greenColor"), lineWidth: 1)
                         Text("تسجيل حساب جديد")
+                            .font(Font.custom("Tajawal-Regular", size: 20))
+
                             .foregroundColor(Color("greenColor"))
                             .font(.title3)
                             .fontWeight(.medium)
@@ -58,7 +60,7 @@ struct loginView: View {
                     ZStack{
                         
                         Text("تسجيل دخول ")
-                            .font(Font.custom("Tajawal-Regular", size: 20))
+                            .modifier(buttonCustomFont())
                             .foregroundColor(Color.white)
                             .font(.title3)
                             .fontWeight(.medium)
@@ -77,10 +79,17 @@ struct loginView: View {
                 .opacity(loginVM.isFormValid ? 1 : 0.5)
                 .disabled(!loginVM.isFormValid)
             }
+            .onAppear{
+                loginVM.setUp(session: session)
+
+            }
             .padding(.horizontal,20.0)
             .padding(.bottom,35.0)
             
         }.ignoresSafeArea()
+            .onTapGesture {
+                      self.hideKeyboard()
+                    }
         
     }
 }
@@ -133,29 +142,4 @@ extension loginView {
         
     }
     
-    var inputView : some View {
-        
-        Section{
-            VStack(alignment: .leading,spacing: 10){
-
-                mobileNumberView
-                passwordTextInput
-            }
-            
-            
-            
-        }header: {
-            HStack(alignment:.top){
-                Spacer()
-                Text("تسجيل دخول")
-                    
-                    .font(.title)
-                    .font(Font.custom("Tajawal-Regular", size: 20))
-
-                    .foregroundColor(Color("greenColor"))
-                    .fontWeight(.medium)
-            }
-            .padding()
-        }   
-    }
 }
